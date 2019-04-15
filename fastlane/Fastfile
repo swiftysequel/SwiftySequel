@@ -1,0 +1,78 @@
+fastlane_version '2.121.1'
+default_platform :mac
+
+swiftlint_config_file = '.swiftlint.yml'
+swiftlint_executable = './Pods/SwiftLint/swiftlint'
+swiftlint_reporter = 'emoji'
+
+platform :mac do
+    before_all do |lane|
+        ensure_bundle_exec
+    end
+
+    desc 'Sets up the working directory for development, testing etc.'
+    lane :setup do
+        sh 'git submodule init && git submodule update'
+        cocoapods(repo_update: true)
+    end
+
+    desc 'Lints the code.'
+    lane :lint do
+        swiftlint(
+            mode: :lint,
+            config_file: swiftlint_config_file,
+            executable: swiftlint_executable,
+            reporter: swiftlint_reporter
+        )
+    end
+
+    desc 'Runs `swiftlint analyze` on the code base.'
+    desc 'Run `bundle exec fastlane analyze autocorrect:true` to attempt auto-correction of rule violations.'
+    lane :analyze do |options|
+        # Clearing the DerivedData folder before compiling is required for "swiftlint analyze"
+        clear_derived_data
+
+        buildlog_path = File.expand_path("#{FastlaneCore::Helper.buildlog_path}/fastlane/xcbuild/#{Time.now.strftime('%F')}/#{Process.pid}")
+        buildlog_file = "#{buildlog_path}/xcodebuild.log"
+
+        xcodebuild(
+           workspace: 'SwiftySequel.xcworkspace',
+           scheme: 'SwiftySequel',
+           configuation: 'Debug',
+           destination: 'generic/platform=macOS',
+           buildlog_path: buildlog_path,
+           xcpretty_output: 'simple'
+       )
+
+       # Run swiftlint from the project root instead of the ./fastlane subdirectory
+       Dir.chdir('..') do
+           begin
+               swiftlint_command = [
+                   swiftlint_executable, 'analyze',
+                   '--config', swiftlint_config_file,
+                   '--compiler-log-path', buildlog_file,
+                   '--reporter', swiftlint_reporter
+               ]
+               if options[:autocorrect]
+                   swiftlint_command.push('--autocorrect')
+               end
+               sh swiftlint_command
+           rescue
+               UI.user_error! '"swiftlint analyze" finished with errors, pass "autocorrect:true" to autocorrect them.'
+           end
+       end
+    end
+
+    desc 'Runs all the tests.'
+    lane :test do
+        run_tests
+    end
+
+    after_all do |lane|
+        clean_build_artifacts
+    end
+
+    error do |lane, exception|
+        clean_build_artifacts
+    end
+end

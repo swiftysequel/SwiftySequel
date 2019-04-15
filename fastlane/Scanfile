@@ -1,0 +1,3 @@
+#device('iPad Pro (11-inch)')
+only_testing(['SwiftySequelTests', 'SwiftySequelUITests'])
+scheme('SwiftySequel')

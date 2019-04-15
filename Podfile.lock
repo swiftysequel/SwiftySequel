@@ -1,0 +1,57 @@
+PODS:
+  - CocoaLumberjack/Core (3.5.3)
+  - CocoaLumberjack/Swift (3.5.3):
+    - CocoaLumberjack/Core
+  - Nimble (8.0.1)
+  - PickwareStyleGuide (0.0.1):
+    - SwiftLint (~> 0.31.0)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - Quick (2.1.0)
+  - RxSwift (4.5.0)
+  - SwiftLint (0.31.0)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift (~> 3.5)
+  - Nimble (~> 8.0)
+  - "PickwareStyleGuide (from `git@github.com:VIISON/style-guide.git`, branch `master`)"
+  - PromiseKit (~> 6.8)
+  - Quick (~> 2.1)
+  - RxSwift (~> 4.5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaLumberjack
+    - Nimble
+    - PromiseKit
+    - Quick
+    - RxSwift
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  PickwareStyleGuide:
+    :branch: master
+    :git: "git@github.com:VIISON/style-guide.git"
+
+CHECKOUT OPTIONS:
+  PickwareStyleGuide:
+    :commit: f068623a718f027b77a5af4cf8e8d75a14592cfc
+    :git: "git@github.com:VIISON/style-guide.git"
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  PickwareStyleGuide: 56f459994230d6d2dfda6eb44a2d53000c51d711
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+
+PODFILE CHECKSUM: a0ac64b6123bfe94e7e85c12f8e63bcd72623945
+
+COCOAPODS: 1.6.1
