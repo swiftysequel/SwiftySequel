@@ -1,8 +1,8 @@
 import AppKit
 
 @NSApplicationMain
-public class AppDelegate: NSObject, NSApplicationDelegate {
-    @IBOutlet public weak var window: NSWindow!
+internal class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet internal weak var window: NSWindow!
     @IBOutlet private weak var databaseSelectionToolbarItem: NSToolbarItem!
     @IBOutlet private weak var tableStructureToolbarItem: NSToolbarItem!
     @IBOutlet private weak var tableContentToolbarItem: NSToolbarItem!
@@ -11,11 +11,11 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var connection: MySqlConnection?
 
-    public func applicationDidFinishLaunching(_ aNotification: Notification) {
+    internal func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.connection = try? MySqlConnection(host: "127.0.0.1", username: "root")
     }
 
-    public func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+    internal func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         // Save changes in the application's managed object context before the application terminates.
         let context = persistentContainer.viewContext
         if !context.commitEditing() {
@@ -48,13 +48,13 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
         return .terminateNow
     }
 
-    public func applicationWillTerminate(_ aNotification: Notification) {
+    internal func applicationWillTerminate(_ aNotification: Notification) {
         self.connection = nil
     }
 
     // MARK: - Core Data
 
-    public lazy var persistentContainer: NSPersistentContainer = {
+    internal lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "SwiftySequel")
         container.loadPersistentStores { _, error in
             if let error = error {
@@ -79,7 +79,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    public func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
+    internal func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
         return persistentContainer.viewContext.undoManager
     }
 

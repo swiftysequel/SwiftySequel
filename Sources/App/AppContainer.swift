@@ -1,5 +1,5 @@
-public class AppContainer: NestedDependencyInjectionContainer {
-    public init() throws {
+internal class AppContainer: NestedDependencyInjectionContainer {
+    internal init() throws {
         super.init()
 
         // Register any app-wide services here

@@ -1,8 +1,8 @@
-public enum MySql {
-    public enum CharacterSet {
+internal enum MySql {
+    internal enum CharacterSet {
         case latin1
 
-        public var stringEncoding: String.Encoding {
+        internal var stringEncoding: String.Encoding {
             return .isoLatin1
         }
     }

@@ -2,8 +2,8 @@ import Nimble
 import Quick
 import XCTest
 
-internal class ExampleUiSpec: QuickSpec {
-    override internal func spec() {
+public class ExampleUiSpec: QuickSpec {
+    public override func spec() {
         print(
             "Printing something to work around a linking error. See "
                 + "https://stackoverflow.com/q/40986082/981846 for more info."

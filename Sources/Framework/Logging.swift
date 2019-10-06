@@ -1,7 +1,7 @@
 import os
 
 /// A unified protocol implemented by all logging services.
-public protocol Logger {
+internal protocol Logger {
     /// Logs the passed `message`.
     ///
     /// - Parameters:
@@ -11,20 +11,20 @@ public protocol Logger {
 }
 
 /// A `Logger` implementation utilizing Apple's unified logging aka `os_log()`.
-public class OsLogger: Logger {
-    public required init() {}
+internal class OsLogger: Logger {
+    internal required init() {}
 
-    public func log(_ message: StaticString, type: OSLogType) {
+    internal func log(_ message: StaticString, type: OSLogType) {
         os_log(message, type: type)
     }
 }
 
-extension OsLogger: ContainerInitializableComponent { // swiftlint:disable:this explicit_acl
-    public static var publicType: Any.Type {
+extension OsLogger: ContainerInitializableComponent {
+    internal static var publicType: Any.Type {
         return Logger.self
     }
 
-    public static func createFrom(container: DependencyInjectionContainer) throws -> Self {
+    internal static func createFrom(container: DependencyInjectionContainer) throws -> Self {
         return self.init()
     }
 }
