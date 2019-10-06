@@ -15,7 +15,7 @@ target 'SwiftySequel' do
     # Public pods
     pod 'CocoaLumberjack/Swift', '~> 3.5', :inhibit_warnings => true
     pod 'PromiseKit', '~> 6.8', :inhibit_warnings => true
-    pod 'RxSwift', '~> 4.5', :inhibit_warnings => true
+    pod 'RxSwift', '~> 5.0', :inhibit_warnings => true
 
     target 'SwiftySequelTests' do
         inherit! :search_paths

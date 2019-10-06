@@ -328,7 +328,6 @@
 				B137B85722703A8C00EC5CFA /* Resources */,
 				E554EE9F50888D303143A3B9 /* [CP] Embed Pods Frameworks */,
 				B121B09F2272462600D5175E /* ShellScript */,
-				07CBC9681A1DC781BA722B66 /* [CP] Copy Pods Resources */,
 				B141DB68234911D6005757C8 /* Embed Libraries */,
 			);
 			buildRules = (
@@ -453,25 +452,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07CBC9681A1DC781BA722B66 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftySequel/Pods-SwiftySequel-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3A4D84C8B769B140DD556961 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

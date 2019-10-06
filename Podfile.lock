@@ -1,20 +1,20 @@
 PODS:
-  - CocoaLumberjack/Core (3.5.3)
-  - CocoaLumberjack/Swift (3.5.3):
+  - CocoaLumberjack/Core (3.6.0)
+  - CocoaLumberjack/Swift (3.6.0):
     - CocoaLumberjack/Core
-  - Nimble (8.0.1)
+  - Nimble (8.0.4)
   - PickwareStyleGuide (0.0.1):
-    - SwiftLint (~> 0.31.0)
-  - PromiseKit (6.8.4):
-    - PromiseKit/CorePromise (= 6.8.4)
-    - PromiseKit/Foundation (= 6.8.4)
-    - PromiseKit/UIKit (= 6.8.4)
-  - PromiseKit/CorePromise (6.8.4)
-  - PromiseKit/Foundation (6.8.4):
+    - SwiftLint (~> 0.35.0)
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
     - PromiseKit/CorePromise
-  - Quick (2.1.0)
-  - RxSwift (4.5.0)
-  - SwiftLint (0.31.0)
+  - Quick (2.2.0)
+  - RxSwift (5.0.0)
+  - SwiftLint (0.35.0)
 
 DEPENDENCIES:
   - CocoaLumberjack/Swift (~> 3.5)
@@ -22,7 +22,7 @@ DEPENDENCIES:
   - "PickwareStyleGuide (from `git@github.com:VIISON/style-guide.git`, branch `master`)"
   - PromiseKit (~> 6.8)
   - Quick (~> 2.1)
-  - RxSwift (~> 4.5)
+  - RxSwift (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -40,18 +40,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PickwareStyleGuide:
-    :commit: f068623a718f027b77a5af4cf8e8d75a14592cfc
+    :commit: 69d04f4fdb70b7f8d9e458717ea7042d079524f0
     :git: "git@github.com:VIISON/style-guide.git"
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  PickwareStyleGuide: 56f459994230d6d2dfda6eb44a2d53000c51d711
-  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
-  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  PickwareStyleGuide: 6acfb74a98065a1c12061e48f596b311188e4f0d
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: a0ac64b6123bfe94e7e85c12f8e63bcd72623945
+PODFILE CHECKSUM: 3fe787e636731d50dadafc59e91c25296b523576
 
 COCOAPODS: 1.6.1
