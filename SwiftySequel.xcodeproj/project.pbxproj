@@ -11,6 +11,8 @@
 		9EBD7BD82B72995E4B551640 /* Pods_SwiftySequelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */; };
 		AA291B83A14FB2C8776F1755 /* Pods_SwiftySequel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FA1C16A853DF8B2FFAAE9D /* Pods_SwiftySequel.framework */; };
 		B10376F9234A2EF80026140C /* MySql.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10376F8234A2EF80026140C /* MySql.swift */; };
+		B1037701234A3D6A0026140C /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10376FF234A3D6A0026140C /* DatabaseViewController.swift */; };
+		B1037702234A3D6A0026140C /* DatabaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1037700234A3D6A0026140C /* DatabaseViewController.xib */; };
 		B121B0AB2272487700D5175E /* SwiftySequel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B121B0A22272487700D5175E /* SwiftySequel.xcdatamodeld */; };
 		B121B0AC2272487700D5175E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A52272487700D5175E /* Images.xcassets */; };
 		B121B0AD2272487700D5175E /* AppWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A62272487700D5175E /* AppWindow.xib */; };
@@ -69,6 +71,8 @@
 		A64FE040FAD8CBB911D2A0ED /* Pods-SwiftySequelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelTests.debug.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelTests/Pods-SwiftySequelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftySequelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10376F8234A2EF80026140C /* MySql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySql.swift; sourceTree = "<group>"; };
+		B10376FF234A3D6A0026140C /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
+		B1037700234A3D6A0026140C /* DatabaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatabaseViewController.xib; sourceTree = "<group>"; };
 		B121B0A32272487700D5175E /* SwiftySequel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftySequel.xcdatamodel; sourceTree = "<group>"; };
 		B121B0A52272487700D5175E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B121B0A72272487700D5175E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppWindow.xib; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 			path = MySql;
 			sourceTree = "<group>";
 		};
+		B10376FA234A3CEB0026140C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B10376FF234A3D6A0026140C /* DatabaseViewController.swift */,
+				B1037700234A3D6A0026140C /* DatabaseViewController.xib */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		B121B0A02272487700D5175E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 				B121B0C422724D3100D5175E /* AppContainer.swift */,
 				B121B0A82272487700D5175E /* AppDelegate.swift */,
 				B121B0A62272487700D5175E /* AppWindow.xib */,
+				B10376FA234A3CEB0026140C /* Database */,
 				B10376F7234A2EE80026140C /* MySql */,
 			);
 			path = App;
@@ -429,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B121B0AC2272487700D5175E /* Images.xcassets in Resources */,
+				B1037702234A3D6A0026140C /* DatabaseViewController.xib in Resources */,
 				B121B0BC2272489A00D5175E /* SwiftySequelTests-Info.plist in Resources */,
 				B121B0BA2272489A00D5175E /* SwiftySequelUITests-Info.plist in Resources */,
 				B121B0AD2272487700D5175E /* AppWindow.xib in Resources */,
@@ -599,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1037701234A3D6A0026140C /* DatabaseViewController.swift in Sources */,
 				B141DAFC2348F311005757C8 /* MySqlConnection.swift in Sources */,
 				B10376F9234A2EF80026140C /* MySql.swift in Sources */,
 				B121B0AE2272487700D5175E /* AppDelegate.swift in Sources */,

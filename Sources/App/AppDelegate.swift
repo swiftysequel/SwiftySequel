@@ -13,7 +13,7 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
     private var connection: MySqlConnection?
 
     internal func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.databaseSelectionPopUpButton.setTitle("Select database...")
+        self.clearSelectedDatabase()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.databaseSelectionWillPopUp),
@@ -95,14 +95,22 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - IBActions
 
     @IBAction private func databaseSelectionToolbarItemChanged(_ sender: NSPopUpButton) {
-        guard let selectedDatabase = self.databaseSelectionPopUpButton.titleOfSelectedItem else {
-            self.databaseSelectionPopUpButton.setTitle("Select database...")
+        guard
+            let connection = self.connection,
+            let databaseName = self.databaseSelectionPopUpButton.titleOfSelectedItem
+        else {
+            self.clearSelectedDatabase()
 
             return
         }
 
-        self.databaseSelectionPopUpButton.synchronizeTitleAndSelectedItem()
-        print("Display tables of database \(selectedDatabase)")
+        do {
+            try connection.selectDatabase(named: databaseName)
+            self.window.contentViewController = DatabaseViewController(connection: connection)
+            self.databaseSelectionPopUpButton.synchronizeTitleAndSelectedItem()
+        } catch {
+            self.clearSelectedDatabase()
+        }
     }
 
     @IBAction private func tableStructureToolbarItemClicked(_ sender: NSToolbarItem) {
@@ -121,13 +129,16 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
         print("\(sender.label)")
     }
 
-    // MARK: - Notification callbacks
-
     @objc
     private func databaseSelectionWillPopUp(_ notification: NSNotification) {
         // Refresh the list of available databases
+        self.clearSelectedDatabase()
         self.databaseSelectionPopUpButton.removeAllItems()
-        self.databaseSelectionPopUpButton.setTitle("Select database...")
         self.databaseSelectionPopUpButton.addItems(withTitles: self.connection?.listDatabases() ?? [])
+    }
+
+    private func clearSelectedDatabase() {
+        self.databaseSelectionPopUpButton.select(nil)
+        self.databaseSelectionPopUpButton.setTitle("Select database...")
     }
 }
