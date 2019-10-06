@@ -4,6 +4,7 @@ import AppKit
 internal class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet internal weak var window: NSWindow!
     @IBOutlet private weak var databaseSelectionToolbarItem: NSToolbarItem!
+    @IBOutlet private weak var databaseSelectionPopUpButton: NSPopUpButton!
     @IBOutlet private weak var tableStructureToolbarItem: NSToolbarItem!
     @IBOutlet private weak var tableContentToolbarItem: NSToolbarItem!
     @IBOutlet private weak var queryEditorToolbarItem: NSToolbarItem!
@@ -12,6 +13,14 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
     private var connection: MySqlConnection?
 
     internal func applicationDidFinishLaunching(_ aNotification: Notification) {
+        self.databaseSelectionPopUpButton.setTitle("Select database...")
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.databaseSelectionWillPopUp),
+            name: NSPopUpButton.willPopUpNotification,
+            object: self.databaseSelectionPopUpButton
+        )
+
         self.connection = try? MySqlConnection(host: "127.0.0.1", username: "root")
     }
 
@@ -86,7 +95,14 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - IBActions
 
     @IBAction private func databaseSelectionToolbarItemChanged(_ sender: NSPopUpButton) {
-        print("\(sender.title)")
+        guard let selectedDatabase = self.databaseSelectionPopUpButton.titleOfSelectedItem else {
+            self.databaseSelectionPopUpButton.setTitle("Select database...")
+
+            return
+        }
+
+        self.databaseSelectionPopUpButton.synchronizeTitleAndSelectedItem()
+        print("Display tables of database \(selectedDatabase)")
     }
 
     @IBAction private func tableStructureToolbarItemClicked(_ sender: NSToolbarItem) {
@@ -103,5 +119,15 @@ internal class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction private func consoleToolbarItemClicked(_ sender: NSToolbarItem) {
         print("\(sender.label)")
+    }
+
+    // MARK: - Notification callbacks
+
+    @objc
+    private func databaseSelectionWillPopUp(_ notification: NSNotification) {
+        // Refresh the list of available databases
+        self.databaseSelectionPopUpButton.removeAllItems()
+        self.databaseSelectionPopUpButton.setTitle("Select database...")
+        self.databaseSelectionPopUpButton.addItems(withTitles: self.connection?.listDatabases() ?? [])
     }
 }

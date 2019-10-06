@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +16,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SwiftySequel" customModuleProvider="target">
             <connections>
                 <outlet property="consoleToolbarItem" destination="0Aa-A2-dt9" id="LW5-he-2nl"/>
+                <outlet property="databaseSelectionPopUpButton" destination="cBX-mb-rhQ" id="RGW-zn-SZe"/>
                 <outlet property="databaseSelectionToolbarItem" destination="ImX-2M-ZQ4" id="FVU-0b-hJC"/>
                 <outlet property="queryEditorToolbarItem" destination="qev-XJ-AWe" id="DSQ-DG-1Zw"/>
                 <outlet property="tableContentToolbarItem" destination="ul4-h4-7r0" id="Qr6-DL-X3z"/>
@@ -728,20 +730,14 @@
                     <toolbarItem implicitItemIdentifier="72AEDA37-C204-4443-9C4F-9BE9A3661065" label="Database" paletteLabel="Database selection" id="ImX-2M-ZQ4">
                         <nil key="toolTip"/>
                         <size key="minSize" width="100" height="24"/>
-                        <size key="maxSize" width="300" height="24"/>
+                        <size key="maxSize" width="300" height="26"/>
                         <popUpButton key="view" verticalHuggingPriority="750" id="cBX-mb-rhQ">
                             <rect key="frame" x="4" y="14" width="100" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <popUpButtonCell key="cell" type="roundTextured" title="Item 1" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="SEt-j8-9TW" id="AuM-nq-ZMJ">
+                            <popUpButtonCell key="cell" type="roundTextured" alternateTitle="Select database..." bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AuM-nq-ZMJ">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
-                                <menu key="menu" id="VZ8-rI-ejx">
-                                    <items>
-                                        <menuItem title="Item 1" state="on" id="SEt-j8-9TW"/>
-                                        <menuItem title="Item 2" id="pFj-eb-Lcz"/>
-                                        <menuItem title="Item 3" id="hVC-oZ-qXf"/>
-                                    </items>
-                                </menu>
+                                <menu key="menu" title="Fii" id="VZ8-rI-ejx"/>
                             </popUpButtonCell>
                         </popUpButton>
                         <connections>
