@@ -9,8 +9,10 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet private weak var queryEditorToolbarItem: NSToolbarItem!
     @IBOutlet private weak var consoleToolbarItem: NSToolbarItem!
 
+    private var connection: MySqlConnection?
+
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        self.connection = try? MySqlConnection(host: "127.0.0.1", username: "root")
     }
 
     public func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
@@ -47,7 +49,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     public func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        self.connection = nil
     }
 
     // MARK: - Core Data

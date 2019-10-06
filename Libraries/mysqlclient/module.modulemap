@@ -1,0 +1,16 @@
+module MySqlClient {
+  header "./include/mysql.h"
+  header "./include/errmsg.h"
+  header "./include/field_types.h"
+  header "./include/my_command.h"
+  header "./include/my_list.h"
+  header "./include/mysql/client_plugin.h"
+  header "./include/mysql/plugin_auth_common.h"
+  header "./include/mysql/udf_registration_types.h"
+  header "./include/mysql_com.h"
+  header "./include/mysql_time.h"
+  header "./include/mysql_version.h"
+  header "./include/mysqld_error.h"
+
+  export *
+}

@@ -10,6 +10,7 @@
 		3CAF81199B1C12FFC9122A5D /* Pods_SwiftySequelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A0EB3BE2927A3A2F39C903 /* Pods_SwiftySequelTests.framework */; };
 		9EBD7BD82B72995E4B551640 /* Pods_SwiftySequelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */; };
 		AA291B83A14FB2C8776F1755 /* Pods_SwiftySequel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FA1C16A853DF8B2FFAAE9D /* Pods_SwiftySequel.framework */; };
+		B10376F9234A2EF80026140C /* MySql.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10376F8234A2EF80026140C /* MySql.swift */; };
 		B121B0AB2272487700D5175E /* SwiftySequel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B121B0A22272487700D5175E /* SwiftySequel.xcdatamodeld */; };
 		B121B0AC2272487700D5175E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A52272487700D5175E /* Images.xcassets */; };
 		B121B0AD2272487700D5175E /* AppWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A62272487700D5175E /* AppWindow.xib */; };
@@ -21,6 +22,11 @@
 		B121B0C222724C9C00D5175E /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B121B0C022724C9C00D5175E /* Logging.swift */; };
 		B121B0C322724C9C00D5175E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B121B0C122724C9C00D5175E /* DependencyInjection.swift */; };
 		B121B0C522724D3100D5175E /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B121B0C422724D3100D5175E /* AppContainer.swift */; };
+		B141DAFC2348F311005757C8 /* MySqlConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DAFB2348F311005757C8 /* MySqlConnection.swift */; };
+		B1A79297234926D6006AEF24 /* libmysqlclient.21.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A792672349257A006AEF24 /* libmysqlclient.21.dylib */; };
+		B1A7929823492768006AEF24 /* libmysqlclient.21.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A792672349257A006AEF24 /* libmysqlclient.21.dylib */; };
+		B1A7929923492781006AEF24 /* libssl.1.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A7926C2349257A006AEF24 /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B1A7929A23492792006AEF24 /* libcrypto.1.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A792682349257A006AEF24 /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +46,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B141DB68234911D6005757C8 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B1A7929823492768006AEF24 /* libmysqlclient.21.dylib in Embed Libraries */,
+				B1A7929923492781006AEF24 /* libssl.1.0.0.dylib in Embed Libraries */,
+				B1A7929A23492792006AEF24 /* libcrypto.1.0.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		46A0EB3BE2927A3A2F39C903 /* Pods_SwiftySequelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftySequelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FA1C16A853DF8B2FFAAE9D /* Pods_SwiftySequel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftySequel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA50FDDDB737A34856709FE /* Pods-SwiftySequelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelUITests.release.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelUITests/Pods-SwiftySequelUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A64FE040FAD8CBB911D2A0ED /* Pods-SwiftySequelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelTests.debug.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelTests/Pods-SwiftySequelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftySequelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10376F8234A2EF80026140C /* MySql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySql.swift; sourceTree = "<group>"; };
 		B121B0A32272487700D5175E /* SwiftySequel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftySequel.xcdatamodel; sourceTree = "<group>"; };
 		B121B0A52272487700D5175E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B121B0A72272487700D5175E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppWindow.xib; sourceTree = "<group>"; };
@@ -61,6 +84,24 @@
 		B137B85922703A8C00EC5CFA /* SwiftySequel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftySequel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B137B86C22703A8E00EC5CFA /* SwiftySequelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySequelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B137B87722703A8E00EC5CFA /* SwiftySequelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySequelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B141DAFB2348F311005757C8 /* MySqlConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySqlConnection.swift; sourceTree = "<group>"; };
+		B141DB2B23490B89005757C8 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = Libraries/mysqlclient/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		B1A7920C23492579006AEF24 /* my_command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = my_command.h; sourceTree = "<group>"; };
+		B1A7920D23492579006AEF24 /* mysql_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mysql_version.h; sourceTree = "<group>"; };
+		B1A7920E23492579006AEF24 /* mysql_time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mysql_time.h; sourceTree = "<group>"; };
+		B1A7920F23492579006AEF24 /* my_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = my_list.h; sourceTree = "<group>"; };
+		B1A7921023492579006AEF24 /* field_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = field_types.h; sourceTree = "<group>"; };
+		B1A7921123492579006AEF24 /* mysql_com.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mysql_com.h; sourceTree = "<group>"; };
+		B1A7921323492579006AEF24 /* plugin_auth_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plugin_auth_common.h; sourceTree = "<group>"; };
+		B1A7921423492579006AEF24 /* udf_registration_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = udf_registration_types.h; sourceTree = "<group>"; };
+		B1A7921523492579006AEF24 /* client_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client_plugin.h; sourceTree = "<group>"; };
+		B1A7921623492579006AEF24 /* mysql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mysql.h; sourceTree = "<group>"; };
+		B1A7921723492579006AEF24 /* mysqld_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mysqld_error.h; sourceTree = "<group>"; };
+		B1A7921823492579006AEF24 /* errmsg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = errmsg.h; sourceTree = "<group>"; };
+		B1A792672349257A006AEF24 /* libmysqlclient.21.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.21.dylib; sourceTree = "<group>"; };
+		B1A792682349257A006AEF24 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		B1A7926C2349257A006AEF24 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libssl.1.0.0.dylib; sourceTree = "<group>"; };
+		B1A792952349257A006AEF24 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		BCC47D451CEB491F83189877 /* Pods-SwiftySequel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequel.release.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequel/Pods-SwiftySequel.release.xcconfig"; sourceTree = "<group>"; };
 		CC3D6D6F286ECE4EDB451E1D /* Pods-SwiftySequelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelTests.release.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelTests/Pods-SwiftySequelTests.release.xcconfig"; sourceTree = "<group>"; };
 		D811C19E1512E2C28618A5AF /* Pods-SwiftySequelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelUITests.debug.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelUITests/Pods-SwiftySequelUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA291B83A14FB2C8776F1755 /* Pods_SwiftySequel.framework in Frameworks */,
+				B1A79297234926D6006AEF24 /* libmysqlclient.21.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +140,7 @@
 		75FFAABEB505719B89CCC36B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B141DB2B23490B89005757C8 /* libcrypto.1.0.0.dylib */,
 				70FA1C16A853DF8B2FFAAE9D /* Pods_SwiftySequel.framework */,
 				46A0EB3BE2927A3A2F39C903 /* Pods_SwiftySequelTests.framework */,
 				A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */,
@@ -119,6 +162,15 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		B10376F7234A2EE80026140C /* MySql */ = {
+			isa = PBXGroup;
+			children = (
+				B10376F8234A2EF80026140C /* MySql.swift */,
+				B141DAFB2348F311005757C8 /* MySqlConnection.swift */,
+			);
+			path = MySql;
+			sourceTree = "<group>";
+		};
 		B121B0A02272487700D5175E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +187,7 @@
 				B121B0C422724D3100D5175E /* AppContainer.swift */,
 				B121B0A82272487700D5175E /* AppDelegate.swift */,
 				B121B0A62272487700D5175E /* AppWindow.xib */,
+				B10376F7234A2EE80026140C /* MySql */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -190,6 +243,7 @@
 			children = (
 				B121B0A02272487700D5175E /* Sources */,
 				B121B0B02272489A00D5175E /* Tests */,
+				B141DB14234909D7005757C8 /* Libraries */,
 				B137B85A22703A8C00EC5CFA /* Products */,
 				7D673355433AD0BD213D792F /* Pods */,
 				75FFAABEB505719B89CCC36B /* Frameworks */,
@@ -206,6 +260,61 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B141DB14234909D7005757C8 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7920A23492579006AEF24 /* mysqlclient */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		B1A7920A23492579006AEF24 /* mysqlclient */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7920B23492579006AEF24 /* include */,
+				B1A7921923492579006AEF24 /* lib */,
+				B1A792952349257A006AEF24 /* module.modulemap */,
+			);
+			path = mysqlclient;
+			sourceTree = "<group>";
+		};
+		B1A7920B23492579006AEF24 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7921823492579006AEF24 /* errmsg.h */,
+				B1A7921023492579006AEF24 /* field_types.h */,
+				B1A7920C23492579006AEF24 /* my_command.h */,
+				B1A7920F23492579006AEF24 /* my_list.h */,
+				B1A7921223492579006AEF24 /* mysql */,
+				B1A7921123492579006AEF24 /* mysql_com.h */,
+				B1A7920E23492579006AEF24 /* mysql_time.h */,
+				B1A7920D23492579006AEF24 /* mysql_version.h */,
+				B1A7921623492579006AEF24 /* mysql.h */,
+				B1A7921723492579006AEF24 /* mysqld_error.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B1A7921223492579006AEF24 /* mysql */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7921523492579006AEF24 /* client_plugin.h */,
+				B1A7921323492579006AEF24 /* plugin_auth_common.h */,
+				B1A7921423492579006AEF24 /* udf_registration_types.h */,
+			);
+			path = mysql;
+			sourceTree = "<group>";
+		};
+		B1A7921923492579006AEF24 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B1A792682349257A006AEF24 /* libcrypto.1.0.0.dylib */,
+				B1A792672349257A006AEF24 /* libmysqlclient.21.dylib */,
+				B1A7926C2349257A006AEF24 /* libssl.1.0.0.dylib */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,6 +329,7 @@
 				E554EE9F50888D303143A3B9 /* [CP] Embed Pods Frameworks */,
 				B121B09F2272462600D5175E /* ShellScript */,
 				07CBC9681A1DC781BA722B66 /* [CP] Copy Pods Resources */,
+				B141DB68234911D6005757C8 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -509,6 +619,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B141DAFC2348F311005757C8 /* MySqlConnection.swift in Sources */,
+				B10376F9234A2EF80026140C /* MySql.swift in Sources */,
 				B121B0AE2272487700D5175E /* AppDelegate.swift in Sources */,
 				B121B0C222724C9C00D5175E /* Logging.swift in Sources */,
 				B121B0C522724D3100D5175E /* AppContainer.swift in Sources */,
@@ -617,6 +729,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Libraries/mysqlclient";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -672,6 +785,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Libraries/mysqlclient";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
@@ -689,6 +803,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/mysqlclient/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftySequel.SwiftySequel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -705,6 +823,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/mysqlclient/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftySequel.SwiftySequel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
