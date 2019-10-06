@@ -11,9 +11,14 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SwiftySequel" customModuleProvider="target">
             <connections>
+                <outlet property="consoleToolbarItem" destination="0Aa-A2-dt9" id="LW5-he-2nl"/>
+                <outlet property="databaseSelectionToolbarItem" destination="ImX-2M-ZQ4" id="FVU-0b-hJC"/>
+                <outlet property="queryEditorToolbarItem" destination="qev-XJ-AWe" id="DSQ-DG-1Zw"/>
+                <outlet property="tableContentToolbarItem" destination="ul4-h4-7r0" id="Qr6-DL-X3z"/>
+                <outlet property="tableStructureToolbarItem" destination="5ha-Tf-XD9" id="SHz-Ac-GQ1"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -608,10 +613,39 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Database" id="low-a1-8jI" userLabel="Database">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Database" id="MMI-2f-wrI">
+                        <items>
+                            <menuItem title="Create Database..." id="ix5-we-pa4" userLabel="Create Database">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="PI4-7S-3lC"/>
+                            <menuItem title="Duplicate Database..." id="Cg0-bx-xXI" userLabel="Create Database">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Rename Database..." id="N3m-P9-e2c">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Alter Database..." id="leO-0U-vK4">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Delete Database..." id="k9m-OC-IbQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="View" id="H8h-7b-M4v">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="View" id="HyV-fh-RgO">
                         <items>
+                            <menuItem title="Table Structure" keyEquivalent="1" id="5rV-IZ-8NA"/>
+                            <menuItem title="Table Content" keyEquivalent="2" id="7GM-rX-2Ox"/>
+                            <menuItem title="Query Editor" keyEquivalent="3" id="HeS-l1-fBg"/>
+                            <menuItem isSeparatorItem="YES" id="1fD-MR-ea1"/>
+                            <menuItem title="Show Console" keyEquivalent="K" id="7eb-Jc-pGX"/>
+                            <menuItem isSeparatorItem="YES" id="3wX-28-scC"/>
                             <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
@@ -678,6 +712,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="-221"/>
         </menu>
         <window title="SwiftySequel" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -686,8 +721,69 @@
             <rect key="screenRect" x="0.0" y="0.0" width="2304" height="1273"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="B52F8EE2-BBDE-4A4D-8E93-2F6591CDE90E" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="8fo-Ct-qpm">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="72AEDA37-C204-4443-9C4F-9BE9A3661065" label="Database" paletteLabel="Database selection" id="ImX-2M-ZQ4">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="100" height="24"/>
+                        <size key="maxSize" width="300" height="24"/>
+                        <popUpButton key="view" verticalHuggingPriority="750" id="cBX-mb-rhQ">
+                            <rect key="frame" x="4" y="14" width="100" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButtonCell key="cell" type="roundTextured" title="Item 1" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="SEt-j8-9TW" id="AuM-nq-ZMJ">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="VZ8-rI-ejx">
+                                    <items>
+                                        <menuItem title="Item 1" state="on" id="SEt-j8-9TW"/>
+                                        <menuItem title="Item 2" id="pFj-eb-Lcz"/>
+                                        <menuItem title="Item 3" id="hVC-oZ-qXf"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
+                        <connections>
+                            <action selector="databaseSelectionToolbarItemChanged:" target="Voe-Tx-rLC" id="yxO-so-zqE"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="48D0B03E-66BE-4ED9-AD24-DB94B1DDA99C" label="Structure" paletteLabel="Structure" tag="-1" id="5ha-Tf-XD9">
+                        <connections>
+                            <action selector="tableStructureToolbarItemClicked:" target="Voe-Tx-rLC" id="K6g-as-yii"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="DFD26B80-5C9A-49A5-8EA6-AC8DD2CDA3DD" label="Content" paletteLabel="Content" tag="-1" id="ul4-h4-7r0">
+                        <connections>
+                            <action selector="tableContentToolbarItemClicked:" target="Voe-Tx-rLC" id="UHW-S1-Kpt"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="7346EBD0-EFF5-4E89-9C97-414302658207" label="Query" paletteLabel="Query" tag="-1" id="qev-XJ-AWe">
+                        <connections>
+                            <action selector="queryEditorToolbarItemClicket:" target="Voe-Tx-rLC" id="lWd-MW-PfG"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="BF4AB149-B4BD-4871-88E8-53361C77855D" label="Console" paletteLabel="Console" tag="-1" id="0Aa-A2-dt9">
+                        <connections>
+                            <action selector="consoleToolbarItemClicked:" target="Voe-Tx-rLC" id="gVL-6b-M3I"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="gxo-0G-eTG"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ZFU-am-Kc3"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="ImX-2M-ZQ4"/>
+                    <toolbarItem reference="5ha-Tf-XD9"/>
+                    <toolbarItem reference="ul4-h4-7r0"/>
+                    <toolbarItem reference="qev-XJ-AWe"/>
+                    <toolbarItem reference="ZFU-am-Kc3"/>
+                    <toolbarItem reference="0Aa-A2-dt9"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="139" y="329"/>
         </window>
+        <menuItem title="Delete Database..." id="kZX-kj-5Yj">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
     </objects>
 </document>

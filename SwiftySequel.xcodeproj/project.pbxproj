@@ -12,7 +12,7 @@
 		AA291B83A14FB2C8776F1755 /* Pods_SwiftySequel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FA1C16A853DF8B2FFAAE9D /* Pods_SwiftySequel.framework */; };
 		B121B0AB2272487700D5175E /* SwiftySequel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B121B0A22272487700D5175E /* SwiftySequel.xcdatamodeld */; };
 		B121B0AC2272487700D5175E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A52272487700D5175E /* Images.xcassets */; };
-		B121B0AD2272487700D5175E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A62272487700D5175E /* MainMenu.xib */; };
+		B121B0AD2272487700D5175E /* AppWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B121B0A62272487700D5175E /* AppWindow.xib */; };
 		B121B0AE2272487700D5175E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B121B0A82272487700D5175E /* AppDelegate.swift */; };
 		B121B0BA2272489A00D5175E /* SwiftySequelUITests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B121B0B42272489A00D5175E /* SwiftySequelUITests-Info.plist */; };
 		B121B0BC2272489A00D5175E /* SwiftySequelTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B121B0B72272489A00D5175E /* SwiftySequelTests-Info.plist */; };
@@ -48,7 +48,7 @@
 		A828AEE76BCFC749E2A049E9 /* Pods_SwiftySequelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftySequelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B121B0A32272487700D5175E /* SwiftySequel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftySequel.xcdatamodel; sourceTree = "<group>"; };
 		B121B0A52272487700D5175E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B121B0A72272487700D5175E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B121B0A72272487700D5175E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppWindow.xib; sourceTree = "<group>"; };
 		B121B0A82272487700D5175E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B121B0A92272487700D5175E /* SwiftySequel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SwiftySequel-Info.plist"; sourceTree = "<group>"; };
 		B121B0B32272489A00D5175E /* ExampleUiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUiSpec.swift; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 			children = (
 				B121B0C422724D3100D5175E /* AppContainer.swift */,
 				B121B0A82272487700D5175E /* AppDelegate.swift */,
+				B121B0A62272487700D5175E /* AppWindow.xib */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 			children = (
 				B121B0A22272487700D5175E /* SwiftySequel.xcdatamodeld */,
 				B121B0A52272487700D5175E /* Images.xcassets */,
-				B121B0A62272487700D5175E /* MainMenu.xib */,
 				B121B0A92272487700D5175E /* SwiftySequel-Info.plist */,
 			);
 			path = Resources;
@@ -322,7 +322,7 @@
 				B121B0AC2272487700D5175E /* Images.xcassets in Resources */,
 				B121B0BC2272489A00D5175E /* SwiftySequelTests-Info.plist in Resources */,
 				B121B0BA2272489A00D5175E /* SwiftySequelUITests-Info.plist in Resources */,
-				B121B0AD2272487700D5175E /* MainMenu.xib in Resources */,
+				B121B0AD2272487700D5175E /* AppWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,12 +549,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B121B0A62272487700D5175E /* MainMenu.xib */ = {
+		B121B0A62272487700D5175E /* AppWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B121B0A72272487700D5175E /* Base */,
 			);
-			name = MainMenu.xib;
+			name = AppWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -3,6 +3,11 @@ import AppKit
 @NSApplicationMain
 public class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet public weak var window: NSWindow!
+    @IBOutlet private weak var databaseSelectionToolbarItem: NSToolbarItem!
+    @IBOutlet private weak var tableStructureToolbarItem: NSToolbarItem!
+    @IBOutlet private weak var tableContentToolbarItem: NSToolbarItem!
+    @IBOutlet private weak var queryEditorToolbarItem: NSToolbarItem!
+    @IBOutlet private weak var consoleToolbarItem: NSToolbarItem!
 
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -74,5 +79,27 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
 
     public func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
         return persistentContainer.viewContext.undoManager
+    }
+
+    // MARK: - IBActions
+
+    @IBAction private func databaseSelectionToolbarItemChanged(_ sender: NSPopUpButton) {
+        print("\(sender.title)")
+    }
+
+    @IBAction private func tableStructureToolbarItemClicked(_ sender: NSToolbarItem) {
+        print("\(sender.label)")
+    }
+
+    @IBAction private func tableContentToolbarItemClicked(_ sender: NSToolbarItem) {
+        print("\(sender.label)")
+    }
+
+    @IBAction private func queryEditorToolbarItemClicket(_ sender: NSToolbarItem) {
+        print("\(sender.label)")
+    }
+
+    @IBAction private func consoleToolbarItemClicked(_ sender: NSToolbarItem) {
+        print("\(sender.label)")
     }
 }
