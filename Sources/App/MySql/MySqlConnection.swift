@@ -127,6 +127,14 @@ internal class MySqlConnection {
         }
     }
 
+    internal func storeResult() throws -> MySqlResult? {
+        guard let rawResult = try self.performIfConnected({ mysql_store_result($0) }) else {
+            return nil
+        }
+
+        return MySqlResult(result: rawResult, stringEncoding: self.characterSet.stringEncoding)
+    }
+
     internal func hasMoreResults() throws -> Bool {
         try self.performIfConnected { mysql_more_results($0) }
     }

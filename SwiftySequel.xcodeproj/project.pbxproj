@@ -29,6 +29,7 @@
 		B1A7929823492768006AEF24 /* libmysqlclient.21.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A792672349257A006AEF24 /* libmysqlclient.21.dylib */; };
 		B1A7929923492781006AEF24 /* libssl.1.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A7926C2349257A006AEF24 /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B1A7929A23492792006AEF24 /* libcrypto.1.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B1A792682349257A006AEF24 /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B1CC880B234A7BA00036C815 /* MySqlResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC880A234A7BA00036C815 /* MySqlResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		B1A792682349257A006AEF24 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
 		B1A7926C2349257A006AEF24 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libssl.1.0.0.dylib; sourceTree = "<group>"; };
 		B1A792952349257A006AEF24 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		B1CC880A234A7BA00036C815 /* MySqlResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySqlResult.swift; sourceTree = "<group>"; };
 		BCC47D451CEB491F83189877 /* Pods-SwiftySequel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequel.release.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequel/Pods-SwiftySequel.release.xcconfig"; sourceTree = "<group>"; };
 		CC3D6D6F286ECE4EDB451E1D /* Pods-SwiftySequelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelTests.release.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelTests/Pods-SwiftySequelTests.release.xcconfig"; sourceTree = "<group>"; };
 		D811C19E1512E2C28618A5AF /* Pods-SwiftySequelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftySequelUITests.debug.xcconfig"; path = "../SwiftySequel/Pods/Target Support Files/Pods-SwiftySequelUITests/Pods-SwiftySequelUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				B10376F8234A2EF80026140C /* MySql.swift */,
 				B141DAFB2348F311005757C8 /* MySqlConnection.swift */,
+				B1CC880A234A7BA00036C815 /* MySqlResult.swift */,
 			);
 			path = MySql;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				B121B0AE2272487700D5175E /* AppDelegate.swift in Sources */,
 				B121B0C222724C9C00D5175E /* Logging.swift in Sources */,
 				B121B0C522724D3100D5175E /* AppContainer.swift in Sources */,
+				B1CC880B234A7BA00036C815 /* MySqlResult.swift in Sources */,
 				B121B0C322724C9C00D5175E /* DependencyInjection.swift in Sources */,
 				B121B0AB2272487700D5175E /* SwiftySequel.xcdatamodeld in Sources */,
 			);
